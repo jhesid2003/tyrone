@@ -1,7 +1,7 @@
 # tyrone
 𝕋𝕐ℝ𝕆ℕ𝔼
 <p align="center">
-<img src="./media/imagen.jpeg" width="140" height="140"/>
+<img src="./media/imagen.jpg" width="500" height="500"/>
 </p>
 <p align="center">
 𝗖𝗥𝗘𝗔𝗗𝗢𝗥: 𝓣𝓨𝓡𝓞𝓝𝓔
