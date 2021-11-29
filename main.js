@@ -31,6 +31,13 @@ const { text, extendedText, contact, location, liveLocation, image, video, stick
 const body = mek.message.conversation || mek.message[type].caption || mek.message[type].text || ""
 chats = (type === 'conversation') ? mek.message.conversation : (type === 'extendedTextMessage') ? mek.message.extendedTextMessage.text : ''
 budy = (type === 'conversation' && mek.message.conversation.startsWith(prefix)) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption.startsWith(prefix) ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption.startsWith(prefix) ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text.startsWith(prefix) ? mek.message.extendedTextMessage.text : ''
+ 
+       const reply = (teks) => {	
+          mek.sendMessage(from, teks, text, {sendEphemeral: true, quoted: choute})
+          }
+        const isUrl = (url) => {
+            return url.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/, 'gi'))
+                    }
 
 if (prefix != "") {
 if (!body.startsWith(prefix)) {
