@@ -25,11 +25,11 @@ Instala archivos necesarios
 ```
 Clona este repositorio
  ```bash
-> git clone https://github.com/thechoute/Base
-```
+> git clone https://github.com/jhesid2003/tyrone
+``` 
 Inicia la instalacion
 ```bash
-- cd Base
+- cd tyrone
 - bash install.sh
 ```
 PARA INICIAR EL BOT
