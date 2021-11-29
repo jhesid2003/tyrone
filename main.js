@@ -25,7 +25,7 @@ mek.message = (Object.keys(mek.message)[0] === 'ephemeralMessage') ? mek.message
 const from = mek.key.remoteJid
 const type = Object.keys(mek.message)[0]        
 const quoted = type == 'extendedTextMessage' && mek.message.extendedTextMessage.contextInfo != null ? mek.message.extendedTextMessage.contextInfo.quotedMessage || [] : []
-const typeQuoted = Object.keys(quoted)[0]
+const typeQuoted = Object.keyshquoted)[0]
 const content = JSON.stringify(mek.message)
 const { text, extendedText, contact, location, liveLocation, image, video, sticker, document, audio, product } = MessageType
 const body = mek.message.conversation || mek.message[type].caption || mek.message[type].text || ""
@@ -90,6 +90,7 @@ client.sendMessage(from, 'Hola? Te haz podido comunicar.', MessageType.text, {qu
 
 //ZONA DE COMANDOS	
 switch (command) {
+              
 case 'bot':
 client.sendMessage(from, 'Hola, felicidades, has logrado enviar un mensaje mediante un servidor externo😚', text, {quoted: { key: {
 fromMe: false,
