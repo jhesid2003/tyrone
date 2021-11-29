@@ -24,7 +24,7 @@ global.blocked
 mek.message = (Object.keys(mek.message)[0] === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
 const from = mek.key.remoteJid
 const type = Object.keys(mek.message)[0]        
-const quoted = type == 'extendedTextMessage' && mek.message.extendedTextMessage.contextInfo != null ? mek.message.extendedTextMessage.contextInfo.quotedMessage || [] : []
+const quoted = type == 'extendedTextMessage' && mek.message.extendedTextMessage.contextInfo != null ? mek.message.extendedTextMessage.contextInfo.quotedMessage || [] : []y
 const typeQuoted = Object.keyshquoted)[0]
 const content = JSON.stringify(mek.message)
 const { text, extendedText, contact, location, liveLocation, image, video, sticker, document, audio, product } = MessageType
@@ -140,7 +140,7 @@ Verificación completa usa *${prefix}menu* para ver el Menu`
 
             let tampa = await getBuffer(ppimg)
 
-            Client.sendMessage(from, tampa, image, {quoted: mek, caption: capt})
+            client.sendMessage(from, tampa, image, {quoted: mek, caption: capt})
 
             break            
 case 'bot':
