@@ -90,7 +90,59 @@ client.sendMessage(from, 'Hola? Te haz podido comunicar.', MessageType.text, {qu
 
 //ZONA DE COMANDOS	
 switch (command) {
-              
+  case 'reg':   
+
+        if (isRegister) return reply('*Tu Ya Estas Registrado.*')
+
+        if (!q.includes('|')) return  reply(`Intruccion para registro`)
+
+        const nombre = q.substring(0, q.indexOf('|') - 0)
+
+        const edad = q.substring(q.lastIndexOf('|') + 1)
+
+        const momento = require('moment-timezone')
+
+        const time = momento.tz('America/Santo_Domingo').format('HH:mm:ss')
+
+        if(isNaN(edad)) return reply('*_La edad es numero_*')
+
+        try {
+
+            ppimg = await leo.getProfilePicture(`${sender.split('@')[0]}@s.whatsapp.net`)
+
+            } 
+
+            catch {
+
+            ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+
+            }
+
+            veri = sender                                                
+
+        addRegisteredUser(sender, pushname, nombre, edad, time)
+
+            capt = `
+
+┌────「 *REGISTRADO* 」─
+
+𝐔𝐒𝐄𝐑: _${pushname}_
+
+♾️𝐍𝐎𝐌𝐁𝐑𝐄: _${nombre}_
+
+♾️ 𝐄𝐃𝐀𝐃: _${edad}_
+
+♾️ 𝐇𝐎𝐑𝐀: _${time}_
+
+└────「 *༒☬𝓣𝓨𝓡𝓞𝓝𝓔-𝓑𝓞𝓣☬༒* 」
+
+Verificación completa usa *${prefix}menu* para ver el Menu`
+
+            let tampa = await getBuffer(ppimg)
+
+            Client.sendMessage(from, tampa, image, {quoted: mek, caption: capt})
+
+            break            
 case 'bot':
 client.sendMessage(from, 'Hola, felicidades, has logrado enviar un mensaje mediante un servidor externo😚', text, {quoted: { key: {
 fromMe: false,
